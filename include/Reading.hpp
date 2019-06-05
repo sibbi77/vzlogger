@@ -68,6 +68,7 @@ public:
 	virtual ~ObisIdentifier(){};
 
 	size_t unparse(char *buffer, size_t n);
+	using ReadingIdentifier::operator==;
 	bool operator==(ObisIdentifier const &cmp) const;
 	const std::string toString() {
 		std::ostringstream oss;
@@ -92,6 +93,7 @@ public:
 
 	void parse(const char *buffer);
 	size_t unparse(char *buffer, size_t n);
+	using ReadingIdentifier::operator==;
 	bool operator==(StringIdentifier const &cmp) const;
 	const std::string toString()  {
 		std::ostringstream oss;
@@ -111,6 +113,7 @@ public:
 
 	void parse(const char *string);
 	size_t unparse(char *buffer, size_t n);
+	using ReadingIdentifier::operator==;
 	bool operator==(ChannelIdentifier const &cmp) const;
 	const std::string toString()  {
 		std::ostringstream oss;
@@ -126,6 +129,7 @@ class NilIdentifier : public ReadingIdentifier {
 public:
 	NilIdentifier() {}
 	size_t unparse(char *buffer, size_t n);
+	using ReadingIdentifier::operator==;
 	bool operator==(NilIdentifier const &cmp) const;
 	const std::string toString()  {
 		std::ostringstream oss;
